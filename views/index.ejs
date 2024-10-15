@@ -26,7 +26,12 @@
           </div>
           <ul>
             <% bookings.forEach((b) => {%>
-              <li><%= b %></li>
+              <li><ul>
+                <li><%= b.name %></li>
+                <li><%= b.id %></li>
+                <li><%= b.bookingDate.toDateString() %></li>
+                <li><%= b.creationDate.toDateString() %></li>
+              </ul></li>
             <% }); %>
           </ul>
         <% } %>
