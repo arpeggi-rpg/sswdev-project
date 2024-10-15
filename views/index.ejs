@@ -13,18 +13,14 @@
     <main>
       <h1>Welcome to TrainingBookings</h1>
       <h2>Current Bookings</h2>
-      <div id="bookingsTable">
+      <div id="bookingsListing">
         <% if (bookings.length == 0){ %>
           <h3>No bookings found</h3>
-          <div>
-            <p>To create a new booking click here:</p>
-            <a href="/create">Create a Booking</a>
-          </div>
+          <p>To create a new booking click here:</p>
+          <a href="/create" id="createBooking">Create a Booking</a>
         <% } else { %>
-          <div>
-            <a href="/create">Create a Booking</a>
-          </div>
-          <table>
+            <a href="/create" id="createBooking">Create a Booking</a>
+          <table class="bookingsTable">
             <tr>
               <th>Name</th>
               <th>ID</th>
@@ -48,5 +44,8 @@
         <% } %>
       </div>
     </main>
+    <footer>
+
+    </footer>
   </body>
 </html>
