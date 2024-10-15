@@ -24,16 +24,27 @@
           <div>
             <a href="/create">Create a Booking</a>
           </div>
-          <ul>
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>ID</th>
+              <th>Booking Date</th>
+              <th>Creation Date</th>
+              <th></th>
+            </tr>
             <% bookings.forEach((b) => {%>
-              <li><ul>
-                <li><%= b.name %></li>
-                <li><%= b.id %></li>
-                <li><%= b.bookingDate.toDateString() %></li>
-                <li><%= b.creationDate.toDateString() %></li>
-              </ul></li>
+              <tr>
+                <td><%= b.name %></td>
+                <td><%= b.id %></td>
+                <td><%= b.bookingDate.toDateString() %></td>
+                <td><%= b.creationDate.toDateString() %></td>
+                <td>
+                  <button>Modify</button>
+                  <button>Delete</button>
+                </td>
+              </tr>
             <% }); %>
-          </ul>
+            </table>
         <% } %>
       </div>
     </main>
