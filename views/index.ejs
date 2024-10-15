@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+  </head>
+  <body>
+    <header>
+      <% include partials/header %>
+    </header>
+    <main>
+      <h1>Welcome to TrainingBookings</h1>
+      <h2>Current Bookings</h2>
+      <div id="bookingsTable">
+        <% if (bookings.length == 0){ %>
+          <h3>No bookings found</h3>
+          <div>
+            <p>To create a new booking click here:</p>
+            <a href="/create">Create a Booking</a>
+          </div>
+        <% } else { %>
+          <div>
+            <a href="/create">Create a Booking</a>
+          </div>
+          <ul>
+            <% bookings.forEach((b) => {%>
+              <li><%= b %></li>
+            <% }); %>
+          </ul>
+        <% } %>
+      </div>
+    </main>
+  </body>
+</html>
