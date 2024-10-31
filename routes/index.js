@@ -7,19 +7,31 @@ router.get('/', function(req, res, next) {
     name: "John Doe",
     id: "1234567890",
     bookingDate: new Date(2024, 12, 15),
-    creationDate: new Date()
+    creationDate: new Date(),
+    cardNo: "1234567812345678",
+    expiryMonth: "01",
+    expiryYear: "30",
+    securityCode: "123"
   },
   {
     name: "John Doe",
     id: "1234567890",
     bookingDate: new Date(2024, 12, 15),
-    creationDate: new Date()
+    creationDate: new Date(),
+    cardNo: "1234567812345678",
+    expiryMonth: "01",
+    expiryYear: "30",
+    securityCode: "123"
   },
   {
     name: "John Doe",
     id: "1234567890",
     bookingDate: new Date(2024, 12, 15),
-    creationDate: new Date()
+    creationDate: new Date(),
+    cardNo: "1234567812345678",
+    expiryMonth: "01",
+    expiryYear: "30",
+    securityCode: "123"
   }]});
 });
 

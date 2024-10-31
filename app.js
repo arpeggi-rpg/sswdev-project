@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mongoose = require('mongoose');
 
 var indexRouter = require('./routes/index');
 var createRouter = require('./routes/create');
@@ -18,6 +19,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+const url = 'mongodb://localhost:27017/bookings';
+const connect = mongoose.connect(url);
+
+connect.then((db) => {
+    console.log("Connected to database");
+}, (err) => { console.log(err); });
 
 app.use('/', indexRouter);
 app.use('/create', createRouter);
