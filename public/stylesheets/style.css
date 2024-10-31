@@ -56,6 +56,17 @@ main {
   text-align: center;
 }
 
+#createBooking, button {
+  padding: 3px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background: linear-gradient(45deg, #dddddd 0%, #eeeeee 100%); 
+}
+
+#createBooking:active, button:active {
+  background: linear-gradient(45deg, #cccccc 0%, #dddddd 100%); 
+}
+
 table {
   border-collapse: collapse;
 }
@@ -65,13 +76,13 @@ td, th {
 }
 
 #bookingsTable {
+  margin-top: 8px;
   border: 2px solid #ccc;
 }
 
 #bookingsTable tbody > tr:nth-child(odd) {
   background-color:  #ccc;
 }
-
 
 footer {
   flex-shrink: 0;
