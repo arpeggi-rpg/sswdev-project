@@ -7,7 +7,7 @@
     <link rel='stylesheet' href='/stylesheets/style.css'/>
   </head>
   <body>
-    <header>
+    <header class="banner">
       <% include partials/header %>
     </header>
     <main>
@@ -20,31 +20,35 @@
           <a href="/create" id="createBooking">Create a Booking</a>
         <% } else { %>
             <a href="/create" id="createBooking">Create a Booking</a>
-          <table class="bookingsTable">
-            <tr>
-              <th>Name</th>
-              <th>ID</th>
-              <th>Booking Date</th>
-              <th>Creation Date</th>
-              <th></th>
-            </tr>
-            <% bookings.forEach((b) => {%>
+          <table id="bookingsTable">
+            <thead>
               <tr>
-                <td><%= b.name %></td>
-                <td><%= b.id %></td>
-                <td><%= b.bookingDate.toDateString() %></td>
-                <td><%= b.creationDate.toDateString() %></td>
-                <td>
-                  <button>Modify</button>
-                  <button>Delete</button>
-                </td>
+                <th>Name</th>
+                <th>ID</th>
+                <th>Booking Date</th>
+                <th>Creation Date</th>
+                <th></th>
               </tr>
-            <% }); %>
-            </table>
+            </thead>
+            <tbody>
+              <% bookings.forEach((b) => {%>
+                <tr>
+                  <td><%= b.name %></td>
+                  <td><%= b.id %></td>
+                  <td><%= b.bookingDate.toDateString() %></td>
+                  <td><%= b.creationDate.toDateString() %></td>
+                  <td>
+                    <button>Modify</button>
+                    <button>Delete</button>
+                  </td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
         <% } %>
       </div>
     </main>
-    <footer>
+    <footer class="banner">
       <% include partials/footer %>
     </footer>
   </body>

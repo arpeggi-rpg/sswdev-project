@@ -8,6 +8,18 @@ router.get('/', function(req, res, next) {
     id: "1234567890",
     bookingDate: new Date(2024, 12, 15),
     creationDate: new Date()
+  },
+  {
+    name: "John Doe",
+    id: "1234567890",
+    bookingDate: new Date(2024, 12, 15),
+    creationDate: new Date()
+  },
+  {
+    name: "John Doe",
+    id: "1234567890",
+    bookingDate: new Date(2024, 12, 15),
+    creationDate: new Date()
   }]});
 });
 
