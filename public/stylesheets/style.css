@@ -24,6 +24,10 @@ a {
   text-decoration: none;
 }
 
+header a:hover {
+  color: #aaa;
+}
+
 .banner {
   width: 100%;
   text-align: center;
@@ -38,10 +42,11 @@ a {
   align-items: center;
 }
 
-#headerContent nav {
+#headerContent nav ul {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  gap: 10px;
 }
 
 #headerContent li{
