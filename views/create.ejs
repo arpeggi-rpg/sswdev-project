@@ -1,11 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>This is the create page</p>
-</body>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+  </head>
+  <body>
+    <header class="banner">
+      <% include partials/header %>
+    </header>
+    <main>
+      <h1>Create a New Booking</h1>
+      <div id="bookingForm">
+        <form action="/create" method="post">
+            <div id="nameField">
+                <label for="nameInput">Name: </label>
+                <input type="text" placeholder="John Doe" id="nameInput" name="name">
+            </div>
+            <div id="idField">
+                <label for="idInput">ID: </label>
+                <input type="text" maxlength="10" placeholder="1234567890" id="idInput" name="id">
+            </div>
+            <div id="dateField">
+                <label for="dateInput">Booking Date: </label>
+                <input type="date" id="dateInput" name="bookingDate">
+            </div>
+            <div id="cardNoField">
+                <label for="cardNoInput">Card No.: </label>
+                <input type="text" minlength="16" placeholder="1234567812345678" id="cardNoInput" name="cardNo">
+            </div>
+            <div id="expiryDateFields">
+                <label for="expiryDateInput">Expiry Date: </label>
+                <input type="number" min="1" max="12" placeholder="MM" id="expiryDateInput" name="expiryMonth">
+                <input type="number" min="24" max="99" placeholder="YY" id="expiryDateInput" name="expiryMonth">
+            </div>
+            <div id="securityCodeField">
+                <label for="securityCodeInput">Security Code: </label>
+                <input type="text" minlength="3" maxlength="3" placeholder="123" id="securityCodeInput" name="securityCode">
+            </div>
+            <div id="formButtons">
+                <button type="submit">Create Booking</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+      </div>
+    </main>
+    <footer class="banner">
+      <% include partials/footer %>
+    </footer>
+  </body>
 </html>
