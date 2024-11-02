@@ -92,3 +92,11 @@ td, th {
 footer {
   flex-shrink: 0;
 }
+
+#bookingForm form {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}

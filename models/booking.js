@@ -9,7 +9,7 @@ let bookingsSchema = new Schema({
     id: {
         type: String,
         required: true,
-        max: [10, 'Must be 10 characters or fewer']
+        maxLength: [10, 'Must be 10 characters or fewer']
     },
     bookingDate: {
         type: Date,
@@ -32,10 +32,11 @@ let bookingsSchema = new Schema({
         required: true
     },
     securityCode: {
-        type: Number,
+        type: String,
         required: true,
-        min: [3, 'Must be 3 characters'],
-        max: [3, 'Must be 3 characters']
+        match: [/^\d+$/, 'Must be 3 digits'],
+        minLength: [3, 'Must be 3 digits'],
+        maxLength: [3, 'Must be 3 digits']
     }
 });
 var bookings = mongoose.model('Booking', bookingsSchema);
