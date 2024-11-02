@@ -34,7 +34,8 @@ let bookingsSchema = new Schema({
     securityCode: {
         type: Number,
         required: true,
-        max: [3, 'Must be 3 characters or fewer']
+        min: [3, 'Must be 3 characters'],
+        max: [3, 'Must be 3 characters']
     }
 });
 var bookings = mongoose.model('Booking', bookingsSchema);
