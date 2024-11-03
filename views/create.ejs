@@ -12,7 +12,9 @@
     </header>
     <main>
       <h1>Create a New Booking</h1>
+      <p id="formTitle">Please fill out the information below to create your booking.</p>
       <form id="bookingForm" action="/create" method="post">
+        <div id="formFields">
           <div id="nameField">
               <label for="nameInput">Name: </label>
               <input type="text" placeholder="John Doe" id="nameInput" name="name">
@@ -31,17 +33,20 @@
           </div>
           <div id="expiryDateFields">
               <label for="expiryDateInput">Expiry Date: </label>
-              <input type="number" min="1" max="12" placeholder="MM" id="expiryDateInput" name="expiryMonth">
-              <input type="number" min="24" max="99" placeholder="YY" id="expiryDateInput" name="expiryYear">
+              <div id="expiryDateInputs">
+                <input type="number" min="1" max="12" placeholder="MM" id="expiryDateInput" name="expiryMonth">
+                <input type="number" min="24" max="99" placeholder="YY" id="expiryDateInput" name="expiryYear">
+              </div>
           </div>
           <div id="securityCodeField">
               <label for="securityCodeInput">Security Code: </label>
               <input type="text" minlength="3" maxlength="3" pattern="^\d+$"  title="Security code must be numeric" placeholder="123" id="securityCodeInput" name="securityCode">
           </div>
-          <div id="formButtons">
-              <button type="submit">Create Booking</button>
-              <button type="reset">Reset</button>
-          </div>
+        </div>
+        <div id="formButtons">
+            <button type="submit">Create Booking</button>
+            <button type="reset">Reset</button>
+        </div>
       </form>
     </main>
     <footer class="banner">
