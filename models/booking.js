@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 let bookingsSchema = new Schema({
     name: {
         type: String,
-        required: true,
+        required: true
     },
     id: {
         type: String,

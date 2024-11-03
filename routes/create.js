@@ -6,18 +6,23 @@ router.get('/', function(req, res) {
   res.render('create', { title: 'TrainingBookings'});
 });
 
-router.post('/', async function(req, res) {
-  const name = req.body.name;
-  const id = req.body.id;
-  const bookingDate = req.body.bookingDate;
-  const cardNo = req.body.cardNo;
-  const expiryMonth = req.body.expiryMonth;
-  const expiryYear = req.body.expiryYear;
-  const securityCode = req.body.securityCode;
-  const creationDate = new Date();
-
-  await bookings.create({name, id, bookingDate, creationDate, cardNo, expiryMonth, expiryYear, securityCode});
-  res.redirect(302, '/');
+router.post('/', async function(req, res, next) {
+  try {
+    let formResponse = {
+      name: req.body.name,
+      id: req.body.id,
+      bookingDate: req.body.bookingDate,
+      cardNo: req.body.cardNo,
+      expiryMonth: req.body.expiryMonth,
+      expiryYear: req.body.expiryYear,
+      securityCode: req.body.securityCode,
+      creationDate: new Date()
+    }
+    await bookings.create(formResponse);
+    res.redirect(302, '/');
+  } catch (err) {
+    next(err);
+  }
 });
 
 module.exports = router;
