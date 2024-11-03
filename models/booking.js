@@ -20,8 +20,11 @@ let bookingsSchema = new Schema({
         required: true
     },
     cardNo: {
-        type: BigInt,
-        required: true
+        type: String,
+        required: true,
+        match: [/^\d+$/, 'Only numeric values permitted'],
+        minLength: [16, 'Must be 16 digits'],
+        maxLength: [16, 'Must be 16 digits']
     },
     expiryMonth: {
         type: Number,
@@ -34,7 +37,7 @@ let bookingsSchema = new Schema({
     securityCode: {
         type: String,
         required: true,
-        match: [/^\d+$/, 'Must be 3 digits'],
+        match: [/^\d+$/, 'Only numeric values permitted'],
         minLength: [3, 'Must be 3 digits'],
         maxLength: [3, 'Must be 3 digits']
     }
