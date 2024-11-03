@@ -9,7 +9,8 @@ let bookingsSchema = new Schema({
     id: {
         type: String,
         required: true,
-        maxLength: [10, 'Must be 10 characters or fewer']
+        minLength: [10, 'Must be 10 characters'],
+        maxLength: [10, 'Must be 10 characters']
     },
     bookingDate: {
         type: Date,
