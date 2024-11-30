@@ -7,6 +7,7 @@ require('./utils/dbconnect');
 
 var indexRouter = require('./routes/index');
 var createRouter = require('./routes/create');
+var updateRouter = require('./routes/update')
 
 var app = express();
 
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/create', createRouter);
+app.use('/update', updateRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

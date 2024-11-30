@@ -134,3 +134,19 @@ footer {
   padding: 0;
   margin: 1px 0;
 }
+
+.editButton {
+  background-color: rgb(60, 122, 200);
+  border-color: rgb(50, 100, 170);
+  background-image: none;
+}
+
+.editButton:hover, .editButton:active, .deleteButton:hover, .deleteButton:active {
+  cursor: pointer;
+}
+
+.deleteButton {
+  background-color: rgb(200, 60, 60);
+  border-color: rgb(170, 50, 50);
+  background-image: none;
+}

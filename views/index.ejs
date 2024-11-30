@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <script src="javascripts/buttonredirects.js" defer></script>
   </head>
   <body>
     <header class="banner">
@@ -44,8 +45,11 @@
                   <td><%= b.expiryMonth %>/<%= b.expiryYear %></td>
                   <td><%= b.securityCode %></td>
                   <td>
-                    <button>Modify</button>
-                    <button>Delete</button>
+                  <!--
+                  edit_square.svg and delete.svg from Material Icons by Google  
+                  -->
+                    <button class="editButton redirectButton"><img src="images/edit_square.svg" alt="Edit"></button>
+                    <button class="deleteButton redirectButton"><img src="images/delete.svg" alt="Delete"></button>
                   </td>
                 </tr>
               <% }); %>

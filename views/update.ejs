@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+  </head>
+  <body>
+    <header class="banner">
+      <% include partials/header %>
+    </header>
+    <main>
+      <h1>Update a Booking</h1>
+      <p id="formTitle">Please fill out the information below to update your booking.</p>
+      <form id="bookingForm" action="/update" method="post">
+        <div id="formFields">
+          <div id="nameField">
+              <label for="nameInput">Name: </label>
+              <input type="text" placeholder="John Doe" value="<%=booking.name%>" id="nameInput" name="name">
+          </div>
+          <div id="idField">
+              <label for="idInput">ID: </label>
+              <input type="text" minlength="10" maxlength="10" placeholder="1234567890" value="<%=booking.id%>" id="idInput" name="id">
+          </div>
+          <div id="bookingDateField">
+              <label for="bookingDateInput">Booking Date: </label>
+              <!--
+              booking.bookingDate.toISOString().split('T')[0] formats the date in YYYY-MM-DD format to be used as the value
+              --->
+              <input type="date" value="<%=booking.bookingDate.toISOString().split('T')[0]%>" id="bookingDateInput" name="bookingDate">
+          </div>
+          <div id="creationDateField">
+            <label for="creationDateInput">Creation Date: </label>
+            <input type="date" value="<%=booking.creationDate.toISOString().split('T')[0]%>" id="creationDateInput" name="creationDate">
+        </div>
+          <div id="cardNoField">
+              <label for="cardNoInput">Card No.: </label>
+              <input type="text" minlength="16" maxlength="16" pattern="^\d+$" title="Card no. must be numeric" placeholder="1234567812345678" value="<%=booking.cardNo%>" id="cardNoInput" name="cardNo">
+          </div>
+          <div id="expiryDateFields">
+              <label for="expiryDateInput">Expiry Date: </label>
+              <div id="expiryDateInputs">
+                <input type="number" min="1" max="12" placeholder="MM" class="expiryDateInput" value="<%=booking.expiryMonth%>" name="expiryMonth">
+                <input type="number" min="24" max="99" placeholder="YY" class="expiryDateInput" value="<%=booking.expiryYear%>"name="expiryYear">
+              </div>
+          </div>
+          <div id="securityCodeField">
+              <label for="securityCodeInput">Security Code: </label>
+              <input type="text" minlength="3" maxlength="3" pattern="^\d+$"  title="Security code must be numeric" placeholder="123" value="<%=booking.securityCode%>" id="securityCodeInput" name="securityCode">
+          </div>
+        </div>
+        <div id="formButtons">
+            <button type="submit">Update Booking</button>
+            <button type="reset">Reset</button>
+        </div>
+      </form>
+    </main>
+    <footer class="banner">
+      <% include partials/footer %>
+    </footer>
+  </body>
+</html>
