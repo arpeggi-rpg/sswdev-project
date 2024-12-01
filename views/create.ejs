@@ -17,30 +17,30 @@
         <div id="formFields">
           <div id="nameField">
               <label for="nameInput">Name: </label>
-              <input type="text" placeholder="John Doe" id="nameInput" name="name">
+              <input type="text" placeholder="John Doe" id="nameInput" name="name" required>
           </div>
           <div id="idField">
               <label for="idInput">ID: </label>
-              <input type="text" minlength="10" maxlength="10" placeholder="1234567890" id="idInput" name="id">
+              <input type="text" minlength="10" maxlength="10" placeholder="1234567890" id="idInput" name="id" required>
           </div>
           <div id="dateField">
               <label for="dateInput">Booking Date: </label>
-              <input type="date" id="dateInput" name="bookingDate">
+              <input type="date" id="dateInput" name="bookingDate" required>
           </div>
           <div id="cardNoField">
               <label for="cardNoInput">Card No.: </label>
-              <input type="text" minlength="16" maxlength="16" pattern="^\d+$" title="Card no. must be numeric" placeholder="1234567812345678" id="cardNoInput" name="cardNo">
+              <input type="text" minlength="16" maxlength="16" pattern="^\d+$" title="Card no. must be numeric" placeholder="1234567812345678" id="cardNoInput" name="cardNo" required>
           </div>
           <div id="expiryDateFields">
               <label for="expiryDateInput">Expiry Date: </label>
               <div id="expiryDateInputs">
-                <input type="number" min="1" max="12" placeholder="MM" class="expiryDateInput" name="expiryMonth">
-                <input type="number" min="24" max="99" placeholder="YY" class="expiryDateInput" name="expiryYear">
+                <input type="number" min="1" max="12" placeholder="MM" class="expiryDateInput" name="expiryMonth" required>
+                <input type="number" min="24" max="99" placeholder="YY" class="expiryDateInput" name="expiryYear" required>
               </div>
           </div>
           <div id="securityCodeField">
               <label for="securityCodeInput">Security Code: </label>
-              <input type="text" minlength="3" maxlength="3" pattern="^\d+$"  title="Security code must be numeric" placeholder="123" id="securityCodeInput" name="securityCode">
+              <input type="text" minlength="3" maxlength="3" pattern="^\d+$"  title="Security code must be numeric" placeholder="123" id="securityCodeInput" name="securityCode" required>
           </div>
         </div>
         <div id="formButtons">
