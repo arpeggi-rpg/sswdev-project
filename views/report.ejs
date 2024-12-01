@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+  </head>
+  <body>
+    <header class="banner">
+      <% include partials/header %>
+    </header>
+    <% if (typeof bookings == 'undefined') {%>
+        <main>
+        <h1>Generate Training Session Report</h1>
+        <p id="formTitle">Please fill out the information below to view a report for a user.</p>
+        <form id="reportForm" action="/report" method="post">
+            <div id="formFields">
+            <div id="nameField">
+                <label for="nameInput">Name: </label>
+                <input type="text" placeholder="John Doe" id="nameInput" name="name" required>
+            </div>
+            <div id="fromDateField">
+                <label for="fromDateInput">From: </label>
+                <input type="date" id="fromDateInput" name="fromDate" required>
+            </div>
+            <div id="toDateField">
+                <label for="toDateInput">To: </label>
+                <input type="date" id="toDateInput" name="toDate" required>
+            </div>
+            <div id="formButtons">
+                <button type="submit">Generate Report</button>
+            </div>
+        </form>
+        </main>
+    <%} else if (bookings.length == 0){ %>
+        <main>
+            <h1>No bookings found</h1>
+            <p>No bookings found for the given parameters. Please try again.</p>
+        </main>
+    <% } else { %>
+        <main>
+            <h1>Report for <%=bookings[0].name%></h1>
+            <table id="bookingsTable">
+            <thead>
+                <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>Booking Date</th>
+                <th>Creation Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% bookings.forEach((b) => {%>
+                <tr>
+                    <td><%= b.name %></td>
+                    <td><%= b.id %></td>
+                    <td><%= b.bookingDate.toDateString() %></td>
+                    <td><%= b.creationDate.toDateString() %></td>
+                </tr>
+                <% }); %>
+            </tbody>
+            </table>
+        </main>
+    <%}%>
+    <footer class="banner">
+      <% include partials/footer %>
+    </footer>
+  </body>
+</html>

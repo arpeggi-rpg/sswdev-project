@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var bookings = require('../models/booking');
+var bookingsModel = require('../models/booking');
 
 router.get('/', function(req, res) {
   res.render('create', { title: 'TrainingBookings'});
@@ -18,7 +18,7 @@ router.post('/', async function(req, res, next) {
       securityCode: req.body.securityCode,
       creationDate: new Date()
     }
-    await bookings.create(formResponse);
+    await bookingsModel.create(formResponse);
     res.redirect(302, '/');
   } catch (err) {
     next(err);
